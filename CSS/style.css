@@ -1,0 +1,137 @@
+@font-face {
+    font-family: digital;
+    src: url("../Fonts/digital-7-italic.woff");
+}
+
+
+/* || CSS Reset begins */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* || CSS Reset ends */
+
+/* || VARIABLES */
+
+:root {
+    /* || FONT VARIABLES */
+
+    --FONT-FAMILY-TIME: digital;
+    --FONT-FAMILY-PHASE-DAY-MONTH: 'Times New Roman', Times, Georgia, serif, var(--FONT-FAMILY-TIME);
+    --FONT-SIZE: clamp(3.5rem, 20vw, 8.5rem);
+
+    /* || COLOR VARIABLES */
+
+    --BODY-BGCOLOR: hsl(0, 0%, 15%);
+    --BODY-BG-RADIAL-GRADIENT: radial-gradient(hsl(0, 0%, 20%), black);
+    --FONT-TIME-COLOR: cyan;
+    --FONT-DATE-DAY-COLOR: lime;
+    --DIVIDER-BGCOLOR: aliceblue;
+    --SECONDARY-TIME-SHADOW-COLOR: limegreen;
+    --TERTIARY-TIME-SHADOW-COLOR: chartreuse;
+    --SECONDARY-DATE-DAY-SHADOW-COLOR: white;
+    --TERTIARY-DATE-DAY-SHADOW-COLOR: black;
+}
+
+/* || Utility classes */
+
+.center {
+    text-align: center;
+}
+
+/* || General styles */
+
+html {
+    font-size: var(--FONT-SIZE);
+    font-family: var(--FONT-FAMILY-TIME);
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--BODY-BGCOLOR);
+    background-image: var(--BODY-BG-RADIAL-GRADIENT);
+    letter-spacing: 3.5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    display: inline-block;
+}
+
+hr {
+    height: 2.25px;
+    background-color: var(--DIVIDER-BGCOLOR);
+    border: 0;
+}
+
+/* || Specific styles */
+
+.time-container {
+    color: var(--FONT-TIME-COLOR);
+    letter-spacing: 2px;
+    /* text-shadow: 0 0 50px; */
+    text-shadow: 0 0 70px var(--FONT-TIME-COLOR),
+                 1px 1px 18px var(--SECONDARY-TIME-SHADOW-COLOR),
+                 0 0 40px var(--TERTIARY-TIME-SHADOW-COLOR);
+}
+
+.day-date-container {
+    font-size: 0.35rem;
+    margin-top: 0.2em;
+    color: var(--FONT-DATE-DAY-COLOR);
+    /* text-shadow: 5px 5px 30px; */
+    text-shadow: 5px 5px 30px var(--FONT-DATE-DAY-COLOR),
+                 0.5px 0.5px 1px var(--SECONDARY-DATE-DAY-SHADOW-COLOR),
+                 0 0 10px var(--TERTIARY-DATE-DAY-SHADOW-COLOR);
+
+    display: block;
+}
+
+.month,
+.day {
+    font-family: var(--FONT-FAMILY-PHASE-DAY-MONTH);
+}
+
+.hours::after,
+.minutes::after {
+    content: " :";
+    animation: blink-colon 1s ease-in-out infinite;
+}
+
+@keyframes blink-colon {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.seconds {
+    position: relative;
+}
+
+.seconds::after {
+    content: attr(data-phase);
+    font-family: var(--FONT-FAMILY-PHASE-DAY-MONTH);
+    font-size: 0.2rem;
+    /* font-weight: bolder; */
+    position: absolute;
+    top: -15px;
+    right: 5px;
+}
+
+.date::after {
+    content: ",";
+    font-family: var(--FONT-FAMILY-PHASE-DAY-MONTH);
+}
