@@ -135,3 +135,13 @@ hr {
     content: ",";
     font-family: var(--FONT-FAMILY-PHASE-DAY-MONTH);
 }
+
+
+/* || EXTRA SMALL */
+
+
+@media screen and (max-width: 415px) {
+    .time-container {
+        margin-bottom: 0.35em;
+    }
+}
