@@ -145,3 +145,13 @@ hr {
         margin-bottom: 0.35em;
     }
 }
+
+
+/* Only for hoverable devices with mouse or stylus as pointing devices */
+
+
+@media (hover: hover) and (pointer: fine) {
+    .time-container {
+        margin-bottom: 0;
+    }
+}
