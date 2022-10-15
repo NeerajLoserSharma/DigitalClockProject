@@ -147,7 +147,7 @@ hr {
 }
 
 
-/* Only for hoverable devices with mouse or stylus as pointing devices */
+/* || Only for hoverable devices with mouse or stylus as pointing devices */
 
 
 @media (hover: hover) and (pointer: fine) {
