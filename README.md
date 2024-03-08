@@ -3,7 +3,7 @@
 ### [Live Site](https://neerajlosersharma.github.io/DigitalClockProject/)
 
 &nbsp;
-![Screenshot of the site](https://i.imgur.com/kKF81WI.png)
+![Screenshot of the site](https://i.imgur.com/q6vdIV9.png)
 
 This project is a [responsive website](https://en.wikipedia.org/wiki/Responsive_web_design) which displays the current date and time according to the location with a ravishing digital clock ⏰.
 
